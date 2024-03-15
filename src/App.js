@@ -15,15 +15,17 @@ import {
 const App = () => {
   return (
     <ChakraProvider>
-      <Navbar />
-      <Box marginTop={18} p="4">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/cadastro" element={<AddProductPage />} />
-            <Route path="/edit/:id" element={<EditProductPage />} />
-            <Route path="/" element={<ProductListPage />} />
-          </Routes>
-        </BrowserRouter>
+      <Box>
+        <Navbar marginTop={18} />
+        <Box p="4">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/cadastro" element={<AddProductPage />} end />
+              <Route path="/edit/:id" element={<EditProductPage />} />
+              <Route path="/" element={<ProductListPage />} />
+            </Routes>
+          </BrowserRouter>
+        </Box>
         <Footer />
       </Box>
     </ChakraProvider>
