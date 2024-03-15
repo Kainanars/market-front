@@ -18,7 +18,7 @@ const App = () => {
   return (
     <ChakraProvider>
       <Navbar />
-      <Box p="4" pl="400px" pr={"400px"}> {/* Adiciona um espaçamento à esquerda para evitar que os inputs se estiquem */}
+      <Box marginTop={18} p="4"> {/* Adiciona um espaçamento à esquerda para evitar que os inputs se estiquem */}
         <BrowserRouter>
           <Routes>
             <Route path="/add" element={<AddProductPage />} />

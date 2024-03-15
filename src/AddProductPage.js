@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
-import { Box, Heading, VStack, Input, Button } from '@chakra-ui/react';
+import { Box, Heading, VStack, Input, Button, HStack } from '@chakra-ui/react';
 
 const AddProductPage = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [quantityInStock, setQuantityInStock] = useState('');
+    const navigate = useNavigate();
+
+
+    const handleGoBack = () => {
+        navigate(-1); // Voltar para a página anterior
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,13 +35,16 @@ const AddProductPage = () => {
 
     return (
         <Box>
-            <Heading>Add Product</Heading>
+            <Heading>Cadastrar Produto</Heading>
             <VStack as="form" onSubmit={handleSubmit} spacing="4" mt="4">
-                <Input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
-                <Input placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} />
+                <Input placeholder="Nome" value={name} onChange={e => setName(e.target.value)} />
+                <Input placeholder="Descrição" value={description} onChange={e => setDescription(e.target.value)} />
                 <Input placeholder="Price" value={price} onChange={e => setPrice(e.target.value)} />
-                <Input placeholder="Quantity In Stock" value={quantityInStock} onChange={e => setQuantityInStock(e.target.value)} />
-                <Button type="submit">Add</Button>
+                <Input placeholder="Quantidade" value={quantityInStock} onChange={e => setQuantityInStock(e.target.value)} />
+                <HStack spacing="4" mt="4" justifyContent="space-between">
+                    <Button onClick={handleGoBack} colorScheme="yellow">Voltar</Button>
+                    <Button type="submit" colorScheme="green">Cadastrar</Button>
+                </HStack>
             </VStack>
         </Box>
     );

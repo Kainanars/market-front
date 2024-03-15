@@ -1,17 +1,138 @@
-import { Box, Flex, Link, Spacer, VStack } from '@chakra-ui/react';
+import { useState } from 'react'
+import {
+    useColorMode,
+    Switch,
+    Flex,
+    Button,
+    IconButton,
+    Link
+} from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons' // Importe os ícones MoonIcon e SunIcon
 
 const Navbar = () => {
+    const { colorMode, toggleColorMode } = useColorMode()
+    const isDark = colorMode === 'dark'
+    const [display, changeDisplay] = useState('none')
     return (
-        <Flex bg="blue.500" p="4" align="center">
-            <Box>
-                <Link href="/" color="white" fontWeight="bold" fontSize="xl">Produtos</Link>
-            </Box>
-            <Spacer />
-            <VStack spacing="4" direction="row">
-                <Link href="/add" color="white" fontWeight="bold" fontSize="xl">Cadastrar</Link>
-            </VStack>
+        <Flex marginBottom={10}>
+            <Flex
+                position="fixed"
+                top="1rem"
+                right="1rem"
+                align="center"
+            >
+                {/* Desktop */}
+                <Flex
+                    display={['none', 'none', 'flex', 'flex']}
+                >
+                    <Link href="/" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Home"
+                            my={5}
+                            w="100%"
+                        >
+                            Home
+                        </Button>
+                    </Link>
+
+                    <Link href="/add" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Cadastrar"
+                            my={5}
+                            w="100%"
+                        >
+                            Cadastrar
+                        </Button>
+                    </Link>
+
+                </Flex>
+
+                {/* Mobile */}
+                <IconButton
+                    aria-label="Open Menu"
+                    size="lg"
+                    mr={2}
+                    icon={
+                        <HamburgerIcon />
+                    }
+                    onClick={() => changeDisplay('flex')}
+                    display={['flex', 'flex', 'none', 'none']}
+                />
+                <IconButton
+                    aria-label="Toggle Dark Mode"
+                    icon={isDark ? <MoonIcon /> : <SunIcon />}
+                    onClick={toggleColorMode}
+                    color={isDark ? 'yellow.300' : 'gray.800'}
+                    bgColor={isDark ? 'gray.800' : 'yellow.300'}
+                    _hover={{
+                        color: isDark ? 'yellow.400' : 'gray.900',
+                        bgColor: isDark ? 'gray.700' : 'yellow.400'
+                    }}
+                />
+            </Flex>
+
+            {/* Mobile Content */}
+            <Flex
+                w='100vw'
+                display={display}
+                bgColor="black"
+                zIndex={20}
+                h="100vh"
+                pos="fixed"
+                top="0"
+                left="0"
+                overflowY="auto"
+                flexDir="column"
+            >
+                <Flex justify="flex-end">
+                    <IconButton
+                        mt={2}
+                        mr={2}
+                        aria-label="Close Menu"
+                        size="lg"
+                        icon={
+                            <CloseIcon />
+                        }
+                        onClick={() => changeDisplay('none')}
+                    />
+                </Flex>
+
+                <Flex
+                    flexDir="column"
+                    align="center"
+                >
+                    <Link href="/" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Home"
+                            my={5}
+                            w="100%"
+                        >
+                            Home
+                        </Button>
+                    </Link>
+
+                    <Link href="/add" passHref>
+                        <Button
+                            as="a"
+                            variant="ghost"
+                            aria-label="Cadastrar"
+                            my={5}
+                            w="100%"
+                        >
+                            Cadastrar
+                        </Button>
+                    </Link>
+
+                </Flex>
+            </Flex>
         </Flex>
-    );
-};
+    )
+}
 
 export default Navbar;
