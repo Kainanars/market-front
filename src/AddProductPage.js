@@ -10,7 +10,7 @@ const AddProductPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/api/products', {
+        axios.post('https://market-4c5n.onrender.com/api/products', {
             Name: name,
             Description: description,
             Price: parseFloat(price),

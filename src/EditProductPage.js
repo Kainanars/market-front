@@ -9,14 +9,14 @@ const EditProductPage = () => {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/products/${id}`)
+        axios.get(`https://market-4c5n.onrender.com/api/products/${id}`)
             .then(response => setProduct(response.data))
             .catch(error => console.error(error));
     }, [id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8080/api/products/${id}`, product)
+        axios.put(`https://market-4c5n.onrender.com/api/products/${id}`, product)
             .then(() => {
                 navigate('/');
             })

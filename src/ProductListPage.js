@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Box, Heading, List, ListItem, Flex, Spacer, Button } from '@chakra-ui/react';
+import { Box, Heading, Flex, Button } from '@chakra-ui/react';
 
 const ProductListPage = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/products')
+        axios.get(`https://market-4c5n.onrender.com/api/products`)
             .then(
                 response => {
                     setProducts(response.data)
@@ -18,7 +18,7 @@ const ProductListPage = () => {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8080/api/products/${id}`)
+        axios.delete(`https://market-4c5n.onrender.com/api/products/${id}`)
             .then(() => {
                 setProducts(prevProducts => prevProducts.filter(p => p.id !== id));
             })

@@ -4,6 +4,7 @@ import AddProductPage from './AddProductPage';
 import EditProductPage from './EditProductPage';
 import ProductListPage from './ProductListPage';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 import {
   BrowserRouter,
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/" element={<ProductListPage />} />
           </Routes>
         </BrowserRouter>
+        <Footer />
       </Box>
     </ChakraProvider>
   );
