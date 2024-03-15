@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Box, Heading, VStack, Input, Button, HStack } from '@chakra-ui/react';
 
 const AddProductPage = () => {
+    console.log("Rodando AddProductPage");
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
