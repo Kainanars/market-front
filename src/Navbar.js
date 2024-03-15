@@ -28,7 +28,7 @@ const Navbar = () => {
                 <Flex
                     display={['none', 'none', 'flex', 'flex']}
                 >
-                    <Link href="/" passHref>
+                    <Link href="/">
                         <Button
                             as="a"
                             variant="ghost"
@@ -40,7 +40,7 @@ const Navbar = () => {
                         </Button>
                     </Link>
 
-                    <Link href="/cadastro" passHref>
+                    <Link href="/cadastro">
                         <Button
                             as="a"
                             variant="ghost"
@@ -108,7 +108,7 @@ const Navbar = () => {
                     flexDir="column"
                     align="center"
                 >
-                    <Link href="/" passHref>
+                    <Link href="/">
                         <Button
                             as="a"
                             variant="ghost"
@@ -120,7 +120,7 @@ const Navbar = () => {
                         </Button>
                     </Link>
 
-                    <Link href="/cadastro" passHref>
+                    <Link href="/cadastro">
                         <Button
                             as="a"
                             variant="ghost"
