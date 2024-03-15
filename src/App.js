@@ -21,7 +21,7 @@ const App = () => {
       <Box marginTop={18} p="4"> {/* Adiciona um espaçamento à esquerda para evitar que os inputs se estiquem */}
         <BrowserRouter>
           <Routes>
-            <Route path="/add" element={<AddProductPage />} />
+            <Route path="/cadastro" element={<AddProductPage />} />
             <Route path="/edit/:id" element={<EditProductPage />} />
             <Route path="/" element={<ProductListPage />} />
           </Routes>

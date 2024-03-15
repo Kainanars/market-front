@@ -40,7 +40,7 @@ const Navbar = () => {
                         </Button>
                     </Link>
 
-                    <Link href="/add" passHref>
+                    <Link href="/cadastro" passHref>
                         <Button
                             as="a"
                             variant="ghost"
@@ -120,7 +120,7 @@ const Navbar = () => {
                         </Button>
                     </Link>
 
-                    <Link href="/add" passHref>
+                    <Link to="/cadastro" passHref>
                         <Button
                             as="a"
                             variant="ghost"
