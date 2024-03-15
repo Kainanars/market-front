@@ -31,7 +31,7 @@ const ProductListPage = () => {
     return (
         <Box>
             <Flex justify="center">
-                <Heading>Products</Heading>
+                <Heading>Produtos</Heading>
             </Flex>
             <Grid
                 templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
