@@ -12,7 +12,6 @@ const ProductListPage = () => {
             .then(
                 response => {
                     setProducts(response.data)
-                    console.log(products)
                 }
             )
             .catch(error => console.error(error));

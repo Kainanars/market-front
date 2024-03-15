@@ -120,7 +120,7 @@ const Navbar = () => {
                         </Button>
                     </Link>
 
-                    <Link to="/cadastro" passHref>
+                    <Link href="/cadastro" passHref>
                         <Button
                             as="a"
                             variant="ghost"

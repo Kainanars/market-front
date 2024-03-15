@@ -12,13 +12,11 @@ import {
   Route
 } from "react-router-dom";
 
-
-
 const App = () => {
   return (
     <ChakraProvider>
       <Navbar />
-      <Box marginTop={18} p="4"> {/* Adiciona um espaçamento à esquerda para evitar que os inputs se estiquem */}
+      <Box marginTop={18} p="4">
         <BrowserRouter>
           <Routes>
             <Route path="/cadastro" element={<AddProductPage />} />

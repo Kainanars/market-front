@@ -13,7 +13,7 @@ const AddProductPage = () => {
 
 
     const handleGoBack = () => {
-        navigate(-1); // Voltar para a página anterior
+        navigate(-1);
     };
 
     const handleSubmit = (e) => {
