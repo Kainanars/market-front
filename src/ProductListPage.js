@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Box, Heading, Flex, Button, Grid, GridItem } from '@chakra-ui/react';
-import { useColorModeValue } from '@chakra-ui/react'; // Importe useColorModeValue aqui
+import { useColorModeValue } from '@chakra-ui/react';
 
 const ProductListPage = () => {
     const [products, setProducts] = useState([]);
@@ -26,9 +26,8 @@ const ProductListPage = () => {
             .catch(error => console.error(error));
     };
 
-    const bgColor = useColorModeValue('gray.100', 'gray.700'); // Defina a cor de fundo com useColorModeValue
-    const textColor = useColorModeValue('gray.800', 'gray.200'); // Defina a cor do texto com useColorModeValue
-
+    const bgColor = useColorModeValue('gray.100', 'gray.700');
+    const textColor = useColorModeValue('gray.800', 'gray.200');
     return (
         <Box>
             <Flex justify="center">

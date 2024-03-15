@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import {
     useColorMode,
-    Switch,
     Flex,
     Button,
     IconButton,
     Link
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons' // Importe os ícones MoonIcon e SunIcon
+import { useColorModeValue } from '@chakra-ui/react';
+
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode()
     const isDark = colorMode === 'dark'
     const [display, changeDisplay] = useState('none')
+    const bgColorMenu = useColorModeValue('white', 'black');
+
     return (
         <Flex marginBottom={10}>
             <Flex
@@ -79,7 +82,7 @@ const Navbar = () => {
             <Flex
                 w='100vw'
                 display={display}
-                bgColor="black"
+                bgColor={bgColorMenu}
                 zIndex={20}
                 h="100vh"
                 pos="fixed"
