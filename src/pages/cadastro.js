@@ -12,7 +12,7 @@ export default function Cadastro() {
 
     const handleGoBack = () => {
         router.back()
-        router.push('/home')
+        router.push('/')
     };
 
     const handleSubmit = (e) => {
