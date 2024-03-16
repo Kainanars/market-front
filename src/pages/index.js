@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Box, Heading, Flex, Button, Grid, GridItem } from '@chakra-ui/react';
 import { useColorModeValue } from '@chakra-ui/react';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 import NextLink from 'next/link';
 
 export default function Home() {
@@ -33,7 +31,7 @@ export default function Home() {
 
   return (
     <Box>
-      <Flex justify="center">
+      <Flex justify="center" marginBottom={5} marginTop={20}>
         <Heading>Produtos</Heading>
       </Flex>
       <Grid
